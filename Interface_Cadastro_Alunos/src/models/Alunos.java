@@ -7,7 +7,7 @@ public class Alunos {
     public String email;
     public String cpf;
     public String telefone; 
-    public String endereço;
+    public String endereco;
     
     // Getter e Setter para ID
     public int getId() {
@@ -42,7 +42,7 @@ public class Alunos {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public String getEndereço() {
+    public String getEndereco() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

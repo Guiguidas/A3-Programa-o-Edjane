@@ -29,17 +29,40 @@ public class Tela_inicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        cadastroAlunosTxt = new javax.swing.JButton();
+        gerenciarFuncionariosTxt = new javax.swing.JButton();
+        relatoriosAcademicosTxt = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        cadastroAlunosTxt.setText("Cadastrar Alunos");
+
+        gerenciarFuncionariosTxt.setText("Gerenciar Funcionarios");
+
+        relatoriosAcademicosTxt.setText("Relatorios Academicos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(198, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(relatoriosAcademicosTxt)
+                    .addComponent(gerenciarFuncionariosTxt)
+                    .addComponent(cadastroAlunosTxt))
+                .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(gerenciarFuncionariosTxt)
+                .addGap(18, 18, 18)
+                .addComponent(relatoriosAcademicosTxt)
+                .addGap(18, 18, 18)
+                .addComponent(cadastroAlunosTxt)
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         pack();
@@ -71,5 +94,8 @@ public class Tela_inicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cadastroAlunosTxt;
+    private javax.swing.JButton gerenciarFuncionariosTxt;
+    private javax.swing.JButton relatoriosAcademicosTxt;
     // End of variables declaration//GEN-END:variables
 }
