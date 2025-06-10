@@ -4,9 +4,9 @@ public class Funcionarios {
 
     private int id;  // <-- Adicionado
     private String nome;
-    private String email;
-    private String data_nascimento;
-    private String salario;
+    private String cargo;
+    private String login;
+    private String senha;
     private String disciplina;
 
     // Getter e Setter para ID
@@ -22,40 +22,20 @@ public class Funcionarios {
     public String getNome() {
         return nome;
     }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    
+    public String getCargo() {
+        return cargo;
     }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getData_nascimento() {
-        return data_nascimento;
-    }
-
-    public void setData_nascimento(String data_nascimento) {
-        this.data_nascimento = data_nascimento;
-    }
-
-    public String getSalario() {
-        return salario;
-    }
-
-    public void setSalario(String salario) {
-        this.salario = salario;
-    }
-
+    
+    public String getLogin() {
+        return login;
+    }   
+    
+    public String getSenha() {
+        return senha;
+    }    
+    
     public String getDisciplina() {
         return disciplina;
-    }
-
-    public void setDisciplina(String disciplina) {
-        this.disciplina = disciplina;
-    }
+    }    
 }
