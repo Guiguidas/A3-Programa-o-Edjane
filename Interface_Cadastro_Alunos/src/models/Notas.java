@@ -12,7 +12,7 @@ public class Notas {
     
     private int id;  // <-- Adicionado
     private String id_aluno;
-    private String curso;
+    private String id_curso;
     private String nota;
     private String data_lancamento;
    
@@ -30,8 +30,8 @@ public class Notas {
         return id_aluno;
     }
     
-    public String getCurso() {
-        return curso;
+    public String getId_curso() {
+        return id_curso;
     }
     
     public String getNota() {
@@ -40,6 +40,22 @@ public class Notas {
     
     public String getData_lancamento() {
         return data_lancamento;
+    }
+
+    public void setId_aluno(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void setId_curso(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void setNota(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void setData_lancamento(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

@@ -44,7 +44,7 @@ public class FuncionariosDAO {
     }
 
     public void alterar(Funcionarios funcionarios) {
-        String sql = "UPDATE cadastro_prof SET nome = ?, cargo = ?, login = ?, senha = ?, disciplina = ? WHERE id = ?";
+        String sql = "UPDATE b'cadastro_alunos'SET nome = ?, cargo = ?, login = ?, senha = ?, disciplina = ? WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, funcionarios.getNome());
@@ -62,7 +62,7 @@ public class FuncionariosDAO {
 
     public List<Funcionarios> listar() {
         List<Funcionarios> lista = new ArrayList<>();
-        String sql = "SELECT * FROM cadastro_prof";
+        String sql = "SELECT * FROM b'cadastro_alunos'";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
@@ -84,6 +84,10 @@ public class FuncionariosDAO {
             e.printStackTrace();
         }
         return lista;
+    }
+
+    public boolean autenticar(String login, String senha) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

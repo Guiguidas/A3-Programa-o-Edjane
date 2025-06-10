@@ -1,13 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package models;
 
-public class Cursos {
-    //declarar os atributos
-    public int id;
-    public String nome;
-    public String categoria;
-    public String duracao;
-    public String status; 
+/**
+ *
+ * @author Guilherme
+ */
+public class HistoricosAcademicos {
     
+    private int id;  // <-- Adicionado
+    private String id_aluno;
+    private String id_curso;
+    private String data;
+    private String status;
+
     // Getter e Setter para ID
     public int getId() {
         return id;
@@ -16,36 +24,38 @@ public class Cursos {
     public void setId(int id) {
         this.id = id;
     }
+
     // Demais getters e setters
-    public String getNome() {
-        return nome;
-    }
-  
-    public String getCategoria() {
-        return categoria;
+    public String getId_aluno() {
+        return id_aluno;
     }
     
-     public String getDuracao() {
-        return duracao;
+    public String getId_curso() {
+        return id_curso;
     }
-   
-      public String getStatus() {
+    
+    public String getData() {
+        return data;
+    }
+    
+    public String getStatus() {
         return status;
     }
 
-    public void setNome(String string) {
+    public void setId_aluno(String string) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public void setCategoria(String string) {
+    public void setId_curso(String string) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public void setDuracao(String string) {
+    public void setData(String string) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public void setStatus(String string) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
 }
