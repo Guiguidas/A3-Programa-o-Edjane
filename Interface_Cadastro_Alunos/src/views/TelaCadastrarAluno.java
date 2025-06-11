@@ -44,8 +44,6 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         enderecoTxt = new javax.swing.JTextField();
         BotaoCadastrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,39 +84,33 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
 
         jLabel6.setText("Criação de cadastro aluno");
 
-        jLabel7.setText("Curso:");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel6)
                         .addGap(124, 124, 124))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel7))
+                            .addComponent(jLabel1))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(enderecoTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                        .addComponent(telefoneTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(emailTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(cpfTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(nomeTxt, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(enderecoTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(telefoneTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(emailTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cpfTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nomeTxt, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 219, Short.MAX_VALUE)
@@ -150,15 +142,8 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(enderecoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                        .addComponent(BotaoCadastrar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(BotaoCadastrar)
                 .addContainerGap())
         );
 
@@ -191,7 +176,6 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         telefoneTxt.setText("");
         emailTxt.setText("");
         enderecoTxt.setText("");
-        
         
     }//GEN-LAST:event_BotaoCadastrarActionPerformed
 
@@ -233,14 +217,12 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
     private javax.swing.JTextField cpfTxt;
     private javax.swing.JTextField emailTxt;
     private javax.swing.JTextField enderecoTxt;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField nomeTxt;
     private javax.swing.JTextField telefoneTxt;
     // End of variables declaration//GEN-END:variables

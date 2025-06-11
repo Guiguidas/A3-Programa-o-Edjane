@@ -14,7 +14,7 @@ public class AlunosDAO {
     }
 
     public void adicionar(Alunos alunos) {
-        String sql = "INSERT INTO sistema_cadastro_alunos (nome, email, telefone, cpf, endereco) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO aluno (nome, email, telefone, cpf, endereco) VALUES (?, ?, ?, ?, ?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, alunos.getNome());
@@ -30,7 +30,7 @@ public class AlunosDAO {
     }
 
     public void excluir(int id) {
-        String sql = "DELETE FROM sistema_cadastro_alunos WHERE id = ?";
+        String sql = "DELETE FROM aluno WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, id);
@@ -42,7 +42,7 @@ public class AlunosDAO {
     }
 
     public void alterar(Alunos alunos) {
-        String sql = "UPDATE sistema_cadastro_alunos SET nome = ?, email = ?, telefone = ?, cpf = ?, endereco = ? WHERE id = ?";
+        String sql = "UPDATE aluno SET nome = ?, email = ?, telefone = ?, cpf = ?, endereco = ? WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, alunos.getNome());
@@ -50,8 +50,7 @@ public class AlunosDAO {
             stmt.setString(3, alunos.getEmail());
             stmt.setString(4, alunos.getTelefone());
             stmt.setString(5, alunos.getEndereco());
-            stmt.setString(6, alunos.getData_cadastro());
-            stmt.setInt(7, alunos.getId());
+            stmt.setInt(6, alunos.getId());
             stmt.executeUpdate();
             stmt.close();
         } catch (SQLException e) {
@@ -61,7 +60,7 @@ public class AlunosDAO {
 
     public List<Alunos> listar() {
         List<Alunos> lista = new ArrayList<>();
-        String sql = "SELECT * FROM sistema_cadastro_alunos";
+        String sql = "SELECT * FROM alunos";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
@@ -74,7 +73,6 @@ public class AlunosDAO {
                 p.setEmail(rs.getString("email"));
                 p.setTelefone(rs.getString("telefone"));
                 p.setEndereco(rs.getString("endereço"));
-                p.setData_cadastro(rs.getString("data_cadastro"));
                 lista.add(p);
             }
 

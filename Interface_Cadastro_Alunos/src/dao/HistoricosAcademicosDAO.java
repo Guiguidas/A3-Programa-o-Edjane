@@ -18,7 +18,7 @@ public class HistoricosAcademicosDAO {
     }
 
     public void adicionar(HistoricosAcademicos historicosAcademicos) {
-        String sql = "INSERT INTO sistema_cadastro_alunos (id_aluno, id_curso, data, status) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO historicoacademico (id_aluno, id_curso, data, status) VALUES (?, ?, ?, ?, ?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, historicosAcademicos.getId_aluno());
@@ -34,7 +34,7 @@ public class HistoricosAcademicosDAO {
     }
 
     public void excluir(int id) {
-        String sql = "DELETE FROM sistema_cadastro_alunos WHERE id = ?";
+        String sql = "DELETE FROM historicoacademico WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, id);
@@ -46,7 +46,7 @@ public class HistoricosAcademicosDAO {
     }
 
     public void alterar(HistoricosAcademicos historicosAcademicos) {
-        String sql = "UPDATE sistema_cadastro_alunos SET id_aluno = ?, id_curso = ?, data = ?, status = ? WHERE id = ?";
+        String sql = "UPDATE historicoacademico SET id_aluno = ?, id_curso = ?, data = ?, status = ? WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, historicosAcademicos.getId_aluno());
@@ -64,7 +64,7 @@ public class HistoricosAcademicosDAO {
 
     public List<HistoricosAcademicos> listar() {
         List<HistoricosAcademicos> lista = new ArrayList<>();
-        String sql = "SELECT * FROM sistema_cadastro_alunos";
+        String sql = "SELECT * FROM historicoacademico";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();

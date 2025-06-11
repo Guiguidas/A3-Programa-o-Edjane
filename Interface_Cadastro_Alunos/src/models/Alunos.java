@@ -8,7 +8,6 @@ public class Alunos {
     public String email;
     public String telefone; 
     public String endereco;
-    public String data_cadastro;
     
     // Getter e Setter para ID
     public int getId() {
@@ -57,14 +56,6 @@ public class Alunos {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
-    }
-    
-    public String getData_cadastro() {
-        return data_cadastro;
-    }
-
-    public void setData_cadastro(String data_cadastro) {
-        this.data_cadastro = data_cadastro;
     }
 }
     

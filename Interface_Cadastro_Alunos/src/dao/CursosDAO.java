@@ -17,7 +17,7 @@ public class CursosDAO {
     }
 
     public void adicionar(Cursos cursos) {
-        String sql = "INSERT INTO sistema_cadastro_alunos (nome, categoria, duracao, status) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO curso (nome, categoria, duracao, status) VALUES (?, ?, ?, ?, ?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cursos.getNome());
@@ -32,7 +32,7 @@ public class CursosDAO {
     }
 
     public void excluir(int id) {
-        String sql = "DELETE FROM sistema_cadastro_alunos WHERE id = ?";
+        String sql = "DELETE FROM curso WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, id);
@@ -44,7 +44,7 @@ public class CursosDAO {
     }
 
     public void alterar(Cursos cursos) {
-        String sql = "UPDATE sistema_cadastro_alunos SET nome = ?, categoria = ?, duracao = ?, status = ? WHERE id = ?";
+        String sql = "UPDATE curso SET nome = ?, categoria = ?, duracao = ?, status = ? WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cursos.getNome());
@@ -61,7 +61,7 @@ public class CursosDAO {
 
     public List<Cursos> listar() {
         List<Cursos> lista = new ArrayList<>();
-        String sql = "SELECT * FROM sistema_cadastro_alunos";
+        String sql = "SELECT * FROM curso";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();

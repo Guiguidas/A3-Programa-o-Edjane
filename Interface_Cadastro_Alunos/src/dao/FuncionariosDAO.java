@@ -16,7 +16,7 @@ public class FuncionariosDAO {
     }
 
     public void adicionar(Funcionarios funcionarios) {
-        String sql = "INSERT INTO sistema_cadastro_alunos (nome, cargo, login, senha, disciplina) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO funcionario (nome, cargo, login, senha, disciplina) VALUES (?, ?, ?, ?, ?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, funcionarios.getNome());
@@ -32,7 +32,7 @@ public class FuncionariosDAO {
     }
 
     public void excluir(int id) {
-        String sql = "DELETE FROM sistema_cadastro_alunos WHERE id = ?";
+        String sql = "DELETE FROM funcionario WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, id);
@@ -44,7 +44,7 @@ public class FuncionariosDAO {
     }
 
     public void alterar(Funcionarios funcionarios) {
-        String sql = "UPDATE sistema_cadastro_alunos SET nome = ?, cargo = ?, login = ?, senha = ?, disciplina = ? WHERE id = ?";
+        String sql = "UPDATE funcionario SET nome = ?, cargo = ?, login = ?, senha = ?, disciplina = ? WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, funcionarios.getNome());
@@ -62,7 +62,7 @@ public class FuncionariosDAO {
 
     public List<Funcionarios> listar() {
         List<Funcionarios> lista = new ArrayList<>();
-        String sql = "SELECT * FROM sistema_cadastro_alunos";
+        String sql = "SELECT * FROM funcionario";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
