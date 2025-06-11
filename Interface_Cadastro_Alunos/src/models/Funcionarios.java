@@ -7,7 +7,6 @@ public class Funcionarios {
     private String cargo;
     private String login;
     private String senha;
-    private String disciplina;
     private String data_cadastro;
 
     // Getter e Setter para ID

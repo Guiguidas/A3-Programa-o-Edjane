@@ -174,10 +174,11 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         Alunos alunos = new Alunos ();
         alunos.setNome(nomeTxt.getText());
         alunos.setCpf(cpfTxt.getText());
+        alunos.setTelefone(telefoneTxt.getText());
         alunos.setEmail(emailTxt.getText());
         alunos.setEndereco(enderecoTxt.getText());
         //validação de dados
-        if ((nomeTxt.getText().isEmpty() || (cpfTxt.getText().isEmpty()) || (emailTxt.getText().isEmpty()) || (enderecoTxt.getText().isEmpty()))){
+        if ((nomeTxt.getText().isEmpty() || (cpfTxt.getText().isEmpty()) || (telefoneTxt.getText().isEmpty())|| (emailTxt.getText().isEmpty()) || (enderecoTxt.getText().isEmpty()))){
             JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
         }else{
              //isntancias a classe DAO e criando objeto dao 
@@ -187,6 +188,7 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         }
         nomeTxt.setText("");
         cpfTxt.setText("");
+        telefoneTxt.setText("");
         emailTxt.setText("");
         enderecoTxt.setText("");
         

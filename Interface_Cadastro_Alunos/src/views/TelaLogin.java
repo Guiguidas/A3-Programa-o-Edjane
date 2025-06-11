@@ -94,8 +94,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_loginTxtActionPerformed
 
     private void entrarBntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarBntActionPerformed
-        // TODO add your handling code here:
-        
+        // TODO add your handling code here:    
     }//GEN-LAST:event_entrarBntActionPerformed
 
     private void senhaTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaTxtActionPerformed
