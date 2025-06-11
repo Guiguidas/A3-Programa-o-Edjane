@@ -14,7 +14,7 @@ public class AlunosDAO {
     }
 
     public void adicionar(Alunos alunos) {
-        String sql = "INSERT INTO b'cadastro_alunos' (nome, email, telefone, cpf, endereco) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO sistema_cadastro_alunos (nome, email, telefone, cpf, endereco) VALUES (?, ?, ?, ?, ?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, alunos.getNome());
@@ -30,7 +30,7 @@ public class AlunosDAO {
     }
 
     public void excluir(int id) {
-        String sql = "DELETE FROM b'cadastro_alunos' WHERE id = ?";
+        String sql = "DELETE FROM sistema_cadastro_alunos WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, id);
@@ -42,15 +42,16 @@ public class AlunosDAO {
     }
 
     public void alterar(Alunos alunos) {
-        String sql = "UPDATE b'cadastro_alunos' SET nome = ?, email = ?, telefone = ?, cpf = ?, endereco = ? WHERE id = ?";
+        String sql = "UPDATE sistema_cadastro_alunos SET nome = ?, email = ?, telefone = ?, cpf = ?, endereco = ? WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, alunos.getNome());
-            stmt.setString(2, alunos.getEmail());
-            stmt.setString(3, alunos.getTelefone());
-            stmt.setString(4, alunos.getCpf());
+            stmt.setString(2, alunos.getCpf());
+            stmt.setString(3, alunos.getEmail());
+            stmt.setString(4, alunos.getTelefone());
             stmt.setString(5, alunos.getEndereco());
-            stmt.setInt(6, alunos.getId());
+            stmt.setString(6, alunos.getData_cadastro());
+            stmt.setInt(7, alunos.getId());
             stmt.executeUpdate();
             stmt.close();
         } catch (SQLException e) {
@@ -60,7 +61,7 @@ public class AlunosDAO {
 
     public List<Alunos> listar() {
         List<Alunos> lista = new ArrayList<>();
-        String sql = "SELECT * FROM b'cadastro_alunos'";
+        String sql = "SELECT * FROM sistema_cadastro_alunos";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
@@ -69,10 +70,11 @@ public class AlunosDAO {
                 Alunos p = new Alunos();
                 p.setId(rs.getInt("id"));
                 p.setNome(rs.getString("nome"));
+                p.setCpf(rs.getString("cpf"));
                 p.setEmail(rs.getString("email"));
                 p.setTelefone(rs.getString("telefone"));
-                p.setCpf(rs.getString("cpf"));
                 p.setEndereco(rs.getString("endereço"));
+                p.setData_cadastro(rs.getString("data_cadastro"));
                 lista.add(p);
             }
 

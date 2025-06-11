@@ -20,32 +20,32 @@ public class Cursos {
     public String getNome() {
         return nome;
     }
-  
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
     public String getCategoria() {
         return categoria;
     }
     
-     public String getDuracao() {
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+    
+    public String getDuracao() {
         return duracao;
     }
    
-      public String getStatus() {
+    public void setDuracao(String duracao) {
+        this.duracao = duracao;
+    }
+    
+    public String getStatus() {
         return status;
     }
 
-    public void setNome(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setCategoria(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setDuracao(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setStatus(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

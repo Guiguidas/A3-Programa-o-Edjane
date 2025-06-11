@@ -4,6 +4,10 @@
  */
 package views;
 
+import dao.AlunosDAO;
+import javax.swing.JOptionPane;
+import models.Alunos;
+
 /**
  *
  * @author Guilherme
@@ -41,7 +45,7 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
         BotaoCadastrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        cursoTxt = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,11 +88,7 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
 
         jLabel7.setText("Curso:");
 
-        cursoTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cursoTxtActionPerformed(evt);
-            }
-        });
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,25 +101,28 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addGap(124, 124, 124))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel7))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel7))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(enderecoTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(telefoneTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(emailTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cpfTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nomeTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cursoTxt))
-                                .addGap(0, 99, Short.MAX_VALUE))
-                            .addComponent(BotaoCadastrar))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(enderecoTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                        .addComponent(telefoneTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(emailTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(cpfTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(nomeTxt, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 219, Short.MAX_VALUE)
+                                .addComponent(BotaoCadastrar)))
                         .addGap(16, 16, 16))))
         );
         layout.setVerticalGroup(
@@ -148,11 +151,14 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(enderecoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(cursoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(BotaoCadastrar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addComponent(BotaoCadastrar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -165,6 +171,26 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
 
     private void BotaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarActionPerformed
         // TODO add your handling code here:
+        Alunos alunos = new Alunos ();
+        alunos.setNome(nomeTxt.getText());
+        alunos.setCpf(cpfTxt.getText());
+        alunos.setEmail(emailTxt.getText());
+        alunos.setEndereco(enderecoTxt.getText());
+        //validação de dados
+        if ((nomeTxt.getText().isEmpty() || (cpfTxt.getText().isEmpty()) || (emailTxt.getText().isEmpty()) || (enderecoTxt.getText().isEmpty()))){
+            JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
+        }else{
+             //isntancias a classe DAO e criando objeto dao 
+             AlunosDAO dao = new AlunosDAO();
+             dao.adicionar(alunos);
+             JOptionPane.showMessageDialog(null, "Aluno "+nomeTxt.getText()+" foi cadastrado com sucesso");
+        }
+        nomeTxt.setText("");
+        cpfTxt.setText("");
+        emailTxt.setText("");
+        enderecoTxt.setText("");
+        
+        
     }//GEN-LAST:event_BotaoCadastrarActionPerformed
 
     private void enderecoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enderecoTxtActionPerformed
@@ -174,10 +200,6 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
     private void nomeTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomeTxtActionPerformed
-
-    private void cursoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cursoTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cursoTxtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,9 +229,9 @@ public class TelaCadastrarAluno extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoCadastrar;
     private javax.swing.JTextField cpfTxt;
-    private javax.swing.JTextField cursoTxt;
     private javax.swing.JTextField emailTxt;
     private javax.swing.JTextField enderecoTxt;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

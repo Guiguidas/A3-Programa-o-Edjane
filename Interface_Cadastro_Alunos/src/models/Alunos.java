@@ -4,10 +4,11 @@ public class Alunos {
     //declarar os atributos
     public int id;
     public String nome;
-    public String email;
     public String cpf;
+    public String email;
     public String telefone; 
     public String endereco;
+    public String data_cadastro;
     
     // Getter e Setter para ID
     public int getId() {
@@ -25,6 +26,14 @@ public class Alunos {
     public void setNome(String nome) {
         this.nome = nome;
     }
+    
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
     public String getEmail() {
         return email;
@@ -33,29 +42,29 @@ public class Alunos {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    
     public String getTelefone() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return telefone;
     }
 
-    public String getCpf() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
-
+    
     public String getEndereco() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return endereco;
     }
 
-    public void setCpf(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+    
+    public String getData_cadastro() {
+        return data_cadastro;
     }
 
-    public void setTelefone(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setEndereco(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setData_cadastro(String data_cadastro) {
+        this.data_cadastro = data_cadastro;
     }
 }
     

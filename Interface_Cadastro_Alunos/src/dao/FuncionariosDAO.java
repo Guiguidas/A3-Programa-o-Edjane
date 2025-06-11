@@ -16,14 +16,14 @@ public class FuncionariosDAO {
     }
 
     public void adicionar(Funcionarios funcionarios) {
-        String sql = "INSERT INTO b'cadastro_alunos' (nome, cargo, login, senha, disciplina) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO sistema_cadastro_alunos (nome, cargo, login, senha, disciplina) VALUES (?, ?, ?, ?, ?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, funcionarios.getNome());
             stmt.setString(2, funcionarios.getCargo());
             stmt.setString(3, funcionarios.getLogin());
             stmt.setString(4, funcionarios.getSenha());
-            stmt.setString(5, funcionarios.getDisciplina());
+            stmt.setString(5, funcionarios.getData_cadastro());
             stmt.execute();
             stmt.close();
         } catch (SQLException e) {
@@ -32,7 +32,7 @@ public class FuncionariosDAO {
     }
 
     public void excluir(int id) {
-        String sql = "DELETE FROM b'cadastro_alunos' WHERE id = ?";
+        String sql = "DELETE FROM sistema_cadastro_alunos WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, id);
@@ -44,14 +44,14 @@ public class FuncionariosDAO {
     }
 
     public void alterar(Funcionarios funcionarios) {
-        String sql = "UPDATE b'cadastro_alunos'SET nome = ?, cargo = ?, login = ?, senha = ?, disciplina = ? WHERE id = ?";
+        String sql = "UPDATE sistema_cadastro_alunos SET nome = ?, cargo = ?, login = ?, senha = ?, disciplina = ? WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, funcionarios.getNome());
             stmt.setString(2, funcionarios.getCargo());
             stmt.setString(3, funcionarios.getLogin());
             stmt.setString(4, funcionarios.getSenha());
-            stmt.setString(5, funcionarios.getDisciplina());
+            stmt.setString(5, funcionarios.getData_cadastro());
             stmt.setInt(6, funcionarios.getId());
             stmt.executeUpdate();
             stmt.close();
@@ -62,7 +62,7 @@ public class FuncionariosDAO {
 
     public List<Funcionarios> listar() {
         List<Funcionarios> lista = new ArrayList<>();
-        String sql = "SELECT * FROM b'cadastro_alunos'";
+        String sql = "SELECT * FROM sistema_cadastro_alunos";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
@@ -74,7 +74,7 @@ public class FuncionariosDAO {
                 p.setCargo(rs.getString("cargo"));
                 p.setLogin(rs.getString("login"));
                 p.setSenha(rs.getString("senha"));
-                p.setDisciplina(rs.getString("disciplina"));
+                p.setData_cadastro(rs.getString("data_cadastro"));
                 lista.add(p);
             }
 

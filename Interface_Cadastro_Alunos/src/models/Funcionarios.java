@@ -8,6 +8,7 @@ public class Funcionarios {
     private String login;
     private String senha;
     private String disciplina;
+    private String data_cadastro;
 
     // Getter e Setter para ID
     public int getId() {
@@ -23,39 +24,40 @@ public class Funcionarios {
         return nome;
     }
     
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
     public String getCargo() {
         return cargo;
+    }
+    
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
     
     public String getLogin() {
         return login;
     }   
     
+    public void setLogin(String login) {
+        this.login = login;
+    }
+    
     public String getSenha() {
         return senha;
     }    
     
-    public String getDisciplina() {
-        return disciplina;
-    }    
-
-    public void setNome(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    
+    public String getData_cadastro() {
+        return data_cadastro;
     }
 
-    public void setCargo(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setData_cadastro(String data_cadastro) {
+        this.data_cadastro = data_cadastro;
     }
-
-    public void setLogin(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setDisciplina(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setSenha(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 }

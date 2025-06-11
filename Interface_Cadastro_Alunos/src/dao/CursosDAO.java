@@ -17,7 +17,7 @@ public class CursosDAO {
     }
 
     public void adicionar(Cursos cursos) {
-        String sql = "INSERT INTO b'cadastro_alunos' (nome, categoria, duracao, status) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO sistema_cadastro_alunos (nome, categoria, duracao, status) VALUES (?, ?, ?, ?, ?)";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cursos.getNome());
@@ -32,7 +32,7 @@ public class CursosDAO {
     }
 
     public void excluir(int id) {
-        String sql = "DELETE FROM b'cadastro_alunos' WHERE id = ?";
+        String sql = "DELETE FROM sistema_cadastro_alunos WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, id);
@@ -44,14 +44,14 @@ public class CursosDAO {
     }
 
     public void alterar(Cursos cursos) {
-        String sql = "UPDATE b'cadastro_alunos' SET nome = ?, categoria = ?, duracao = ?, status = ? WHERE id = ?";
+        String sql = "UPDATE sistema_cadastro_alunos SET nome = ?, categoria = ?, duracao = ?, status = ? WHERE id = ?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setString(1, cursos.getNome());
             stmt.setString(2, cursos.getCategoria());
             stmt.setString(3, cursos.getDuracao());
             stmt.setString(4, cursos.getStatus());
-            stmt.setInt(6, cursos.getId());
+            stmt.setInt(5, cursos.getId());
             stmt.executeUpdate();
             stmt.close();
         } catch (SQLException e) {
@@ -61,7 +61,7 @@ public class CursosDAO {
 
     public List<Cursos> listar() {
         List<Cursos> lista = new ArrayList<>();
-        String sql = "SELECT * FROM b'cadastro_alunos'";
+        String sql = "SELECT * FROM sistema_cadastro_alunos";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
