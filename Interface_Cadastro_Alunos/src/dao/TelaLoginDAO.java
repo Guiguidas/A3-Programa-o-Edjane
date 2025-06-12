@@ -15,12 +15,12 @@ public class TelaLoginDAO {
          this.conexao = new ConexaoBancoDeDados().getConnection();
     }
 
-    public boolean autenticar(String username, String senha) {
-        String sql = "SELECT * FROM usuarios WHERE username = ? AND senha = ?";
+    public boolean autenticar(String funcionario, String senha) {
+        String sql = "SELECT * FROM funcionario WHERE funcionario = ? AND senha = ?";
 
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, username);
+            stmt.setString(1, funcionario);
             stmt.setString(2, senha);
 
             ResultSet rs = stmt.executeQuery();
